@@ -2,7 +2,6 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TP06___Repaso___ToDo_List.Models;
 
-namespace TP06___Repaso___ToDo_List.Controllers;
 
 public class HomeController : Controller
 {
@@ -13,19 +12,82 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+     public IActionResult Index()
     {
+        return RedirectToAction("VerTareas");
+    }
+
+    public IActionResult VerTareas()
+    {
+        string idUsuarioStr = HttpContext.Session.GetString("IdUsuario");
+        if (string.IsNullOrEmpty(idUsuarioStr))
+            return RedirectToAction("Login", "Account");
+
+        int idUsuario = int.Parse(idUsuarioStr);
+        var tareas = BD.DevolverTareas(idUsuario);
+        return View(tareas);
+    }
+
+    public IActionResult CrearTarea()
+    {
+        string idUsuarioStr = HttpContext.Session.GetString("IdUsuario");
+        if (string.IsNullOrEmpty(idUsuarioStr))
+            return RedirectToAction("Login", "Account");
+
         return View();
     }
 
-    public IActionResult Privacy()
+    [HttpPost]
+    public IActionResult CrearTareaGuardar(Tarea tarea)
     {
-        return View();
+        string idUsuarioStr = HttpContext.Session.GetString("IdUsuario");
+        if (string.IsNullOrEmpty(idUsuarioStr))
+            return RedirectToAction("Login", "Account");
+
+        tarea.IdUsuario = int.Parse(idUsuarioStr);
+        BD.CrearTarea(tarea);
+        return RedirectToAction("VerTareas");
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    public IActionResult ModificarTarea(int id)
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        string idUsuarioStr = HttpContext.Session.GetString("IdUsuario");
+        if (string.IsNullOrEmpty(idUsuarioStr))
+            return RedirectToAction("Login", "Account");
+
+        var tarea = BD.DevolverTarea(id);
+        return View(tarea);
+    }
+
+    [HttpPost]
+    public IActionResult ModificarTareaGuardar(Tarea tarea)
+    {
+        string idUsuarioStr = HttpContext.Session.GetString("IdUsuario");
+        if (string.IsNullOrEmpty(idUsuarioStr))
+            return RedirectToAction("Login", "Account");
+
+        tarea.IdUsuario = int.Parse(idUsuarioStr); 
+        BD.EditarTarea(tarea);
+        return RedirectToAction("VerTareas");
+    }
+
+    public IActionResult EliminarTarea(int id)
+    {
+        string idUsuarioStr = HttpContext.Session.GetString("IdUsuario");
+        if (string.IsNullOrEmpty(idUsuarioStr))
+            return RedirectToAction("Login", "Account");
+
+        BD.EliminarTarea(id);
+        return RedirectToAction("VerTareas");
+    }
+
+    public IActionResult FinalizarTarea(int id)
+    {
+        string idUsuarioStr = HttpContext.Session.GetString("IdUsuario");
+        if (string.IsNullOrEmpty(idUsuarioStr))
+            return RedirectToAction("Login", "Account");
+
+        BD.FinalizarTarea(id);
+        return RedirectToAction("VerTareas");
     }
 }

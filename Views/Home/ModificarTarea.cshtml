@@ -1,0 +1,15 @@
+@model Tarea
+
+<h2>Modificar Tarea</h2>
+<form method="post" asp-action="ModificarTareaGuardar" asp-controller="Home">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <label>Título:</label>
+    <input type="text" name="Titulo" value="@Model.Titulo" required /><br/>
+    <label>Descripción:</label>
+    <input type="text" name="Descripcion" value="@Model.Descripcion" required /><br/>
+    <label>Fecha:</label>
+    <input type="date" name="Fecha" value="@Model.Fecha.ToString("yyyy-MM-dd")" required /><br/>
+    <label>Finalizada:</label>
+    <input type="checkbox" name="Finalizada" @(Model.Finalizada ? "checked" : "") /><br/>
+    <input type="submit" value="Guardar cambios" />
+</form>

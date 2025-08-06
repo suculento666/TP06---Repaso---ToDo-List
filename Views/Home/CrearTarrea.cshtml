@@ -1,0 +1,12 @@
+@model Tarea
+
+<h2>Crear Tarea</h2>
+<form method="post" asp-action="CrearTareaGuardar" asp-controller="Home">
+    <label>Título:</label>
+    <input type="text" name="Titulo" required /><br/>
+    <label>Descripción:</label>
+    <input type="text" name="Descripcion" required /><br/>
+    <label>Fecha:</label>
+    <input type="date" name="Fecha" required /><br/>
+    <input type="submit" value="Crear" />
+</form>
