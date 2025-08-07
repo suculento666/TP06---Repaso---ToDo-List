@@ -95,28 +95,26 @@ public static class BD
         return tarea;
     }
 
-    public static void CrearTarea(Tarea tarea)
+   public static void CrearTarea(Tarea tarea)
+{
+    string query = @"INSERT INTO Tareas (Titulo, Descripcion, Fecha, Finalizada, IdUsuario, Eliminada)
+                     VALUES (@Titulo, @Descripcion, @Fecha, @Finalizada, @IdUsuario, 0)";
+    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        string query = @"INSERT INTO Tareas (Titulo, Descripcion, Fecha, Finalizada, IdUsuario, Eliminada, FechaCreacion)
-                         VALUES (@Titulo, @Descripcion, @Fecha, @Finalizada, @IdUsuario, 0, GETDATE())";
-        using (SqlConnection connection = new SqlConnection(_connectionString))
+        connection.Execute(query, new
         {
-            connection.Execute(query, new
-            {
-                Titulo = tarea.Titulo,
-                Descripcion = tarea.Descripcion,
-                Fecha = tarea.Fecha,
-                Finalizada = tarea.Finalizada,
-                IdUsuario = tarea.IdUsuario
-            });
-        }
+            Titulo = tarea.Titulo,
+            Descripcion = tarea.Descripcion,
+            Fecha = tarea.Fecha,
+            Finalizada = tarea.Finalizada,
+            IdUsuario = tarea.IdUsuario
+        });
     }
+}
 
     public static void EditarTarea(Tarea tarea)
     {
-        string query = @"UPDATE Tareas SET Titulo = @Titulo, Descripcion = @Descripcion, Fecha = @Fecha, 
-                         Finalizada = @Finalizada, FechaModificacion = GETDATE()
-                         WHERE Id = @Id";
+        string query = @"UPDATE Tareas SET Titulo = @Titulo, Descripcion = @Descripcion, Fecha = @Fecha, Finalizado = @Finalizado, FechaModificacion = GETDATE() WHERE Id = @Id";
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             connection.Execute(query, new
