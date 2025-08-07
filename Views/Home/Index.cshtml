@@ -1,1 +1,17 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+<head>
+    <link rel="stylesheet" href="~/css/index.css" />
+</head>
+<main>
+    <h1>Bienvenido a ToDo List</h1>
+    <div style="margin-top: 30px;">
+        <a href="@Url.Action("Login", "Account")">
+            <button type="button">Iniciar sesión</button>
+        </a>
+        <a href="@Url.Action("Registro", "Account")" style="margin-left: 20px;">
+            <button type="button">Crear cuenta</button>
+        </a>
+    </div>
+</main>

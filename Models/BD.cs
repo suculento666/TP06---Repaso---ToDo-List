@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=localhost;DataBase=ToDoList;Integrated Security=True;TrustServerCertificate=True;";
+    private static string _connectionString = @"Server=localhost;DataBase=TP06;Integrated Security=True;TrustServerCertificate=True;";
 
     // USUARIOS
 
@@ -20,32 +20,36 @@ public static class BD
     }
 
     public static bool ExisteUsername(string username)
+{
+    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            string query = "SELECT COUNT(*) FROM Usuarios WHERE Username = @Username";
-            int count = connection.ExecuteScalar<int>(query, new { Username = username });
-            return count > 0;
-        }
+        string query = "SELECT * FROM Usuarios WHERE Username = @Username";
+        Usuario usuario = connection.QueryFirstOrDefault<Usuario>(query, new { Username = username });
+        return usuario != null;
     }
+}
+    
 
-    public static void AgregarUsuario(Usuario usuario)
+ public static void AgregarUsuario(Usuario usuario)
+{
+    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        string query = @"INSERT INTO Usuarios (Nombre, Apellido, Foto, Username, UltimoLogin, Password) 
-                         VALUES (@Nombre, @Apellido, @Foto, @Username, @UltimoLogin, @Password)";
-        using (SqlConnection connection = new SqlConnection(_connectionString))
+        string query = @"INSERT INTO Usuarios 
+                        (Nombre, Apellido, Foto, Username, UltimoLogin, Password)
+                         VALUES
+                        (@Nombre, @Apellido, @Foto, @Username, @UltimoLogin, @Password)";
+
+        connection.Execute(query, new
         {
-            connection.Execute(query, new
-            {
-                Nombre = usuario.Nombre,
-                Apellido = usuario.Apellido,
-                Foto = usuario.Foto,
-                Username = usuario.Username,
-                UltimoLogin = usuario.UltimoLogin,
-                Password = usuario.Password
-            });
-        }
+            Nombre = usuario.Nombre,
+            Apellido = usuario.Apellido,
+            Foto = usuario.Foto,
+            Username = usuario.Username,
+            UltimoLogin = usuario.UltimoLogin,
+            Password = usuario.Password
+        });
     }
+}
 
     public static void ActualizarUltimoLogin(int idUsuario)
     {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z+XmiOW4k1BfFog1D4ZBKHnRoeHp6ZVLBRAyxFFvYgpX0itVLBQycKnytYdin428xx+IaqPk2TXu5KSXbv5xqw==",
+  "dgSpecHash": "FTGbRflxmNmwfAyX73FUS0wq0Z8jAO2BL1qC2QPP0jylSeQSKZPhk7Mi56TkXivbC/VBU6lXv68DZBOiR4Vy6w==",
   "success": true,
-  "projectFilePath": "Z:\\Programación 4to año\\TP06---Repaso---ToDo-List\\TP06---Repaso---ToDo-List.csproj",
+  "projectFilePath": "C:\\Users\\49002222\\TP06---Repaso---ToDo-List\\TP06---Repaso---ToDo-List.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\49002222\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\49002222\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

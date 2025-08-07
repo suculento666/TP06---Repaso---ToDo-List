@@ -9,59 +9,59 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TP06___Repaso___ToDo_List
 build_property.RootNamespace = TP06___Repaso___ToDo_List
-build_property.ProjectDir = Z:\Programación 4to año\TP06---Repaso---ToDo-List\
+build_property.ProjectDir = C:\Users\49002222\TP06---Repaso---ToDo-List\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = Z:\Programación 4to año\TP06---Repaso---ToDo-List
+build_property.MSBuildProjectDirectory = C:\Users\49002222\TP06---Repaso---ToDo-List
 build_property._RazorSourceGeneratorDebug = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/Account/Login.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/Account/Registro.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/Account/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Ryby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/Home/CrearTarrea.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/Home/CrearTarrea.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhclRhcnJlYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/Home/Index.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/Home/ModificarTarea.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/Home/ModificarTarea.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNb2RpZmljYXJUYXJlYS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/Home/Privacy.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/Home/VerTareas.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/Home/VerTareas.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZXJUYXJlYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/Shared/Error.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/_ViewImports.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/_ViewStart.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[Z:/Programación 4to año/TP06---Repaso---ToDo-List/Views/Shared/_Layout.cshtml]
+[C:/Users/49002222/TP06---Repaso---ToDo-List/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ozasp69ctl

@@ -12,11 +12,10 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-     public IActionResult Index()
+   public IActionResult Index()
     {
-        return RedirectToAction("VerTareas");
+        return View();
     }
-
     public IActionResult VerTareas()
     {
         string idUsuarioStr = HttpContext.Session.GetString("IdUsuario");
