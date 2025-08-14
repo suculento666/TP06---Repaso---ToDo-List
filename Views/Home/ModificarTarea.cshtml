@@ -1,5 +1,5 @@
 @model Tarea
-
+<section class = "ModificarTarea">
 <h2>Modificar Tarea</h2>
 <form method="post" asp-action="ModificarTareaGuardar" asp-controller="Home">
     <input type="hidden" name="Id" value="@Model.Id" />
@@ -14,3 +14,4 @@
     <input type="hidden" name="Finalizada" value="false" />
     <input type="submit" value="Guardar cambios" />
 </form>
+</section class>

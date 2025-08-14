@@ -1,7 +1,9 @@
 @model List<Tarea>
-
+<section class = "VerTareas">
 <h2>Mis Tareas</h2>
 <a href="@Url.Action("CrearTarea", "Home")">Nueva Tarea</a>
+<a href="@Url.Action("CerrarSesion", "Account")" style="margin-left: 20px;">Cerrar Sesión</a>
+
 <table>
     <tr>
         <th>Título</th>
@@ -28,3 +30,4 @@
     </tr>
 }
 </table>
+</section class>
