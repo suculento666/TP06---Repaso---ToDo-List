@@ -9,9 +9,5 @@ public class Tarea
 
  
     public bool Eliminada { get; set; }
-    public DateTime FechaCreacion { get; set; }
-    public DateTime FechaModificacion { get; set; }
-    public DateTime FechaEliminacion { get; set; }
-
     public Tarea() { }
 }

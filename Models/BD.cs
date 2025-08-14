@@ -4,8 +4,7 @@ using System.Collections.Generic;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=localhost;DataBase=TP06;Integrated Security=True;TrustServerCertificate=True;";
-
+private static string _connectionString = @"Server=localhost;DataBase=TP06R;Integrated Security=True;TrustServerCertificate=True;";
     // USUARIOS
 
     public static Usuario BuscarUsuario(string username, string password)
@@ -107,43 +106,43 @@ public static class BD
             Descripcion = tarea.Descripcion,
             Fecha = tarea.Fecha,
             Finalizada = tarea.Finalizada,
-            IdUsuario = tarea.IdUsuario
+            IdUsuario = tarea.IdUsuario,
+            Eliminada = tarea.Eliminada
         });
     }
 }
 
-    public static void EditarTarea(Tarea tarea)
+public static void EditarTarea(Tarea tarea)
+{
+    // Se elimina la referencia a FechaModificacion de la consulta
+string query = @"UPDATE Tareas SET Titulo = @Titulo, Descripcion = @Descripcion, Fecha = @Fecha, Finalizada = @Finalizada WHERE Id = @Id";    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        string query = @"UPDATE Tareas SET Titulo = @Titulo, Descripcion = @Descripcion, Fecha = @Fecha, Finalizado = @Finalizado, FechaModificacion = GETDATE() WHERE Id = @Id";
-        using (SqlConnection connection = new SqlConnection(_connectionString))
+        connection.Execute(query, new
         {
-            connection.Execute(query, new
-            {
-                Titulo = tarea.Titulo,
-                Descripcion = tarea.Descripcion,
-                Fecha = tarea.Fecha,
-                Finalizada = tarea.Finalizada,
-                Id = tarea.Id
-            });
-        }
+            Titulo = tarea.Titulo,
+            Descripcion = tarea.Descripcion,
+            Fecha = tarea.Fecha,
+            Finalizada = tarea.Finalizada,
+            Id = tarea.Id
+        });
     }
+}
 
     public static void EliminarTarea(int idTarea)
     {
-        // Borrado lógico
-        string query = @"UPDATE Tareas SET Eliminada = 1, FechaEliminacion = GETDATE() WHERE Id = @Id";
-        using (SqlConnection connection = new SqlConnection(_connectionString))
+        
+string query = @"UPDATE Tareas SET Eliminada = 1 WHERE Id = @Id";           using (SqlConnection connection = new SqlConnection(_connectionString))
         {
             connection.Execute(query, new { Id = idTarea });
         }
     }
 
     public static void FinalizarTarea(int idTarea)
+{
+    string query = "UPDATE Tareas SET Finalizada = @Finalizada WHERE Id = @Id";
+    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
-        string query = "UPDATE Tareas SET Finalizada = 1 WHERE Id = @Id";
-        using (SqlConnection connection = new SqlConnection(_connectionString))
-        {
-            connection.Execute(query, new { Id = idTarea });
-        }
+        connection.Execute(query, new { Finalizada = true, Id = idTarea });
     }
+}
 }

@@ -10,6 +10,7 @@
     <label>Fecha:</label>
     <input type="date" name="Fecha" value="@Model.Fecha.ToString("yyyy-MM-dd")" required /><br/>
     <label>Finalizada:</label>
-    <input type="checkbox" name="Finalizada" @(Model.Finalizada ? "checked" : "") /><br/>
+    <input type="checkbox" name="Finalizada" value="true" @(Model.Finalizada ? "checked" : "") /><br/>
+    <input type="hidden" name="Finalizada" value="false" />
     <input type="submit" value="Guardar cambios" />
 </form>
