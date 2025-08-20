@@ -5,7 +5,6 @@ using System.Collections.Generic;
 public static class BD
 {
 private static string _connectionString = @"Server=localhost;DataBase=TP06R;Integrated Security=True;TrustServerCertificate=True;";
-    // USUARIOS
 
     public static Usuario BuscarUsuario(string username, string password)
     {
@@ -70,7 +69,6 @@ private static string _connectionString = @"Server=localhost;DataBase=TP06R;Inte
         return usuario;
     }
 
-    // TAREAS (NOMBRES IGUALES A TU CONTROLLER)
 
     public static List<Tarea> DevolverTareas(int idUsuario)
     {
@@ -114,7 +112,6 @@ private static string _connectionString = @"Server=localhost;DataBase=TP06R;Inte
 
 public static void EditarTarea(Tarea tarea)
 {
-    // Se elimina la referencia a FechaModificacion de la consulta
 string query = @"UPDATE Tareas SET Titulo = @Titulo, Descripcion = @Descripcion, Fecha = @Fecha, Finalizada = @Finalizada WHERE Id = @Id";    using (SqlConnection connection = new SqlConnection(_connectionString))
     {
         connection.Execute(query, new

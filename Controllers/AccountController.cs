@@ -5,7 +5,6 @@ public class AccountController : Controller
 {
     public IActionResult Login()
     {
-        // Si ya hay usuario logueado, va directo a las tareas
         if (!string.IsNullOrEmpty(HttpContext.Session.GetString("IdUsuario")))
             return RedirectToAction("VerTareas", "Home");
         return View();
@@ -39,14 +38,13 @@ public class AccountController : Controller
     [HttpPost]
     public IActionResult RegistroGuardar(Usuario usuario)
     {
-        // Validar que el username no exista
         if (BD.ExisteUsername(usuario.Username))
         {
             ViewBag.Mensaje = "El nombre de usuario ya existe.";
             return View("Registro");
         }
 
-        usuario.UltimoLogin = DateTime.Now; // O lo que corresponda
+        usuario.UltimoLogin = DateTime.Now;
         BD.AgregarUsuario(usuario);
         return RedirectToAction("Login");
     }
